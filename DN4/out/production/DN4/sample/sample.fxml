@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Datoteka">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#preveriCena" text="Preveri" />
+                  <MenuItem mnemonicParsing="false" onAction="#pobrisiCar" text="Pobrisi" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Informacije">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#howTo" text="HowTo" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane fx:id="tabPane" layoutY="-3.0" prefHeight="310.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                  <Tab text="Podatki o najem vozila">
+                      <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="282.0" prefWidth="600.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="37.0" text="Datum za najem: " />
+                              <Label layoutX="14.0" layoutY="91.0" text="Datum za vracilo: " />
+                              <DatePicker fx:id="najemVozila" layoutX="137.0" layoutY="33.0" prefHeight="25.0" prefWidth="148.0" />
+                              <DatePicker fx:id="vracanjeVozila" layoutX="139.0" layoutY="87.0" prefHeight="25.0" prefWidth="147.0" />
+                              <Label layoutX="14.0" layoutY="141.0" text="Mesto prevzema: " />
+                              <Label layoutX="14.0" layoutY="190.0" text="Mesto oddaje: " />
+                              <ComboBox fx:id="prevzemCar" layoutX="138.0" layoutY="137.0" prefHeight="25.0" prefWidth="146.0" />
+                              <ComboBox fx:id="oddajeCar" layoutX="137.0" layoutY="186.0" prefHeight="25.0" prefWidth="149.0" />
+                              <Label layoutX="333.0" layoutY="37.0" text="Tip menjalnik: " />
+                              <Label layoutX="336.0" layoutY="91.0" text="Gorivo: " />
+                              <Label layoutX="333.0" layoutY="141.0" text="Velikost: " />
+                              <ComboBox fx:id="menjalnikCar" layoutX="436.0" layoutY="33.0" prefWidth="150.0" />
+                              <ComboBox fx:id="gorivoCar" layoutX="436.0" layoutY="87.0" prefWidth="150.0" />
+                              <ComboBox fx:id="velikostCar" layoutX="436.0" layoutY="137.0" prefWidth="150.0" />
+                              <Label layoutX="14.0" layoutY="241.0" text="Avtomobili ki izpolnujejo zgoraj izbrane kriterije so: " />
+                              <ComboBox fx:id="izbraneCar" layoutX="306.0" layoutY="237.0" prefHeight="25.0" prefWidth="282.0" />
+                           </children></AnchorPane>
+                      </content>
+                  </Tab>
+                <Tab text="Podatki o oseba">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="282.0" prefWidth="600.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="28.0" text="Ime: " />
+                              <Label layoutX="13.0" layoutY="88.0" text="Priimek :" />
+                              <Label layoutX="15.0" layoutY="146.0" text="Naslov: " />
+                              <TextField fx:id="imeCar" layoutX="76.0" layoutY="24.0" />
+                              <TextField fx:id="priimekCar" layoutX="76.0" layoutY="84.0" />
+                              <TextField fx:id="naslovCar" layoutX="76.0" layoutY="142.0" />
+                              <Label layoutX="19.0" layoutY="209.0" text="Email: " />
+                              <TextField fx:id="emailCar" layoutX="76.0" layoutY="205.0" />
+                              <Label layoutX="286.0" layoutY="28.0" text="Telefon: " />
+                              <Label layoutX="288.0" layoutY="88.0" text="Starost: " />
+                              <Label layoutX="285.0" layoutY="146.0" text="Cas imanje izpit: " />
+                              <TextField fx:id="telefonCar" layoutX="414.0" layoutY="24.0" />
+                              <TextField fx:id="starostCar" layoutX="414.0" layoutY="84.0" />
+                              <TextField fx:id="casIzpit" layoutX="414.0" layoutY="142.0" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Podatki o placilu">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="233.0" />
+                              <Label layoutX="14.0" layoutY="26.0" text="Metode placevanja: " />
+                              <ChoiceBox fx:id="metodaPlacevanje" layoutX="132.0" layoutY="22.0" prefWidth="150.0" />
+                              <Label layoutX="14.0" layoutY="82.0" text="Kartica: " />
+                              <TextField fx:id="karticaC" layoutX="68.0" layoutY="78.0" prefHeight="25.0" prefWidth="215.0" />
+                              <Label layoutX="300.0" layoutY="82.0" text="CCV: " />
+                              <TextField fx:id="CCV" layoutX="339.0" layoutY="78.0" prefHeight="25.0" prefWidth="34.0" />
+                              <Label layoutX="14.0" layoutY="141.0" text="Dodatno varovanje: " />
+                              <CheckBox fx:id="kasko" layoutX="132.0" layoutY="141.0" mnemonicParsing="false" text="Kasko " />
+                              <CheckBox fx:id="kaskoPlus" layoutX="207.0" layoutY="141.0" mnemonicParsing="false" text="Kasko+" />
+                              <CheckBox layoutX="293.0" layoutY="141.0" mnemonicParsing="false" text="None" />
+                           </children></AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <Label layoutX="14.0" layoutY="331.0" text="Status: " />
+            <TextField fx:id="statusCar" layoutX="64.0" layoutY="327.0" prefHeight="25.0" prefWidth="225.0" />
+            <Button fx:id="potrdiButton" layoutX="447.0" layoutY="307.0" mnemonicParsing="false" onAction="#potrdiCar" prefHeight="25.0" prefWidth="121.0" text="Potrdi najem" />
+            <Button fx:id="preveriButton" layoutX="447.0" layoutY="340.0" mnemonicParsing="false" onAction="#preveriCena" prefHeight="25.0" prefWidth="121.0" text="Preveri " />
+            <TextField fx:id="znesekCar" layoutX="345.0" layoutY="327.0" prefHeight="24.0" prefWidth="83.0" />
+            <Label layoutX="300.0" layoutY="331.0" text="Cena: " />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
